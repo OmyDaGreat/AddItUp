@@ -14,11 +14,11 @@ plugins {
     alias(libs.plugins.kobweb.application)
 }
 
-group = "xyz.malefic.dynamicsite"
+group = "xyz.malefic.additup"
 version = "1.0.0"
 
 kobweb {
-    pagesPackage = "xyz.malefic.dynamicsite.client.pages"
+    pagesPackage = "xyz.malefic.additup.client.pages"
     app {
         index {
             description.set("Powered by Kobweb")
@@ -27,11 +27,11 @@ kobweb {
 }
 
 kotlin {
-    configAsKobwebApplication("dynamicsite")
+    configAsKobwebApplication("additup")
 
     jvm {
         mainRun {
-            mainClass = "xyz.malefic.dynamicsite.server.MainKt"
+            mainClass = "xyz.malefic.additup.server.MainKt"
         }
     }
 

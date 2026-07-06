@@ -1,4 +1,4 @@
-package xyz.malefic.dynamicsite.client.pages
+package xyz.malefic.additup.client.pages
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -17,8 +17,8 @@ import kotlinx.browser.window
 import kotlinx.coroutines.await
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Text
-import xyz.malefic.dynamicsite.common.json
-import xyz.malefic.dynamicsite.common.model.Message
+import xyz.malefic.additup.common.json
+import xyz.malefic.additup.common.model.Message
 
 @Page
 @Composable

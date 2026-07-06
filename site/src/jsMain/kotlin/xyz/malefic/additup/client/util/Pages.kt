@@ -1,4 +1,4 @@
-package xyz.malefic.dynamicsite.client.util
+package xyz.malefic.additup.client.util
 
 enum class Pages(
     val value: String,

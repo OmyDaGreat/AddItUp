@@ -1,4 +1,4 @@
-package xyz.malefic.dynamicsite.server
+package xyz.malefic.additup.server
 
 import org.http4k.core.ContentType.Companion.APPLICATION_JSON
 import org.http4k.core.HttpHandler
@@ -15,9 +15,10 @@ import org.http4k.filter.CorsPolicy
 import org.http4k.routing.RoutingHttpHandler
 import org.http4k.routing.bind
 import org.http4k.routing.routes
-import xyz.malefic.dynamicsite.common.json
-import xyz.malefic.dynamicsite.common.model.Message
+import xyz.malefic.additup.common.json
+import xyz.malefic.additup.common.model.Message
 import java.nio.file.Files
+import java.nio.file.Path
 import java.nio.file.Paths
 
 val corsPolicy =
@@ -67,7 +68,7 @@ private fun candidatePaths(requestPath: String): List<String> {
     }
 }
 
-private fun findStaticFile(requestPath: String): java.nio.file.Path? {
+private fun findStaticFile(requestPath: String): Path? {
     val candidates = candidatePaths(requestPath)
 
     for (root in staticRoots) {
@@ -87,7 +88,7 @@ private fun findStaticFile(requestPath: String): java.nio.file.Path? {
     return null
 }
 
-private fun serveFile(filePath: java.nio.file.Path): Response =
+private fun serveFile(filePath: Path): Response =
     try {
         val content = Files.readAllBytes(filePath)
         Response(OK)

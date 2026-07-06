@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "dynamicsite"
+rootProject.name = "additup"
 
 include(":site")

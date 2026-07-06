@@ -1,4 +1,4 @@
-package xyz.malefic.dynamicsite.server
+package xyz.malefic.additup.server
 
 import org.http4k.core.then
 import org.http4k.filter.ServerFilters

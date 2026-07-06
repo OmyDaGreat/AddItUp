@@ -1,4 +1,4 @@
-package xyz.malefic.dynamicsite.client
+package xyz.malefic.additup.client
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.ui.modifiers.minHeight

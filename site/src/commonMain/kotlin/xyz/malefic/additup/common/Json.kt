@@ -1,4 +1,4 @@
-package xyz.malefic.dynamicsite.common
+package xyz.malefic.additup.common
 
 import kotlinx.serialization.json.Json
 
