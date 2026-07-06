@@ -43,145 +43,222 @@ object Color {
         dark: RGB,
     ) = if (ColorMode.current.isLight) light else dark
 
+    fun ColorMode.colorModeAware(
+        light: RGB,
+        dark: RGB,
+    ) = if (isLight) light else dark
+
     val primary
         @Composable
         get() = colorModeAware(primaryLight, primaryDark)
+
+    infix fun primaryOf(colorMode: ColorMode) = colorMode.colorModeAware(primaryLight, primaryDark)
 
     val onPrimary
         @Composable
         get() = colorModeAware(onPrimaryLight, onPrimaryDark)
 
+    infix fun onPrimaryOf(colorMode: ColorMode) = colorMode.colorModeAware(onPrimaryLight, onPrimaryDark)
+
     val primaryContainer
         @Composable
         get() = colorModeAware(primaryContainerLight, primaryContainerDark)
+
+    infix fun primaryContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(primaryContainerLight, primaryContainerDark)
 
     val onPrimaryContainer
         @Composable
         get() = colorModeAware(onPrimaryContainerLight, onPrimaryContainerDark)
 
+    infix fun onPrimaryContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(onPrimaryContainerLight, onPrimaryContainerDark)
+
     val secondary
         @Composable
         get() = colorModeAware(secondaryLight, secondaryDark)
+
+    infix fun secondaryOf(colorMode: ColorMode) = colorMode.colorModeAware(secondaryLight, secondaryDark)
 
     val onSecondary
         @Composable
         get() = colorModeAware(onSecondaryLight, onSecondaryDark)
 
+    infix fun onSecondaryOf(colorMode: ColorMode) = colorMode.colorModeAware(onSecondaryLight, onSecondaryDark)
+
     val secondaryContainer
         @Composable
         get() = colorModeAware(secondaryContainerLight, secondaryContainerDark)
+
+    infix fun secondaryContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(secondaryContainerLight, secondaryContainerDark)
 
     val onSecondaryContainer
         @Composable
         get() = colorModeAware(onSecondaryContainerLight, onSecondaryContainerDark)
 
+    infix fun onSecondaryContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(onSecondaryContainerLight, onSecondaryContainerDark)
+
     val tertiary
         @Composable
         get() = colorModeAware(tertiaryLight, tertiaryDark)
+
+    infix fun tertiaryOf(colorMode: ColorMode) = colorMode.colorModeAware(tertiaryLight, tertiaryDark)
 
     val onTertiary
         @Composable
         get() = colorModeAware(onTertiaryLight, onTertiaryDark)
 
+    infix fun onTertiaryof(colorMode: ColorMode) = colorMode.colorModeAware(onTertiaryLight, onTertiaryDark)
+
     val tertiaryContainer
         @Composable
         get() = colorModeAware(tertiaryContainerLight, tertiaryContainerDark)
+
+    infix fun tertiaryContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(tertiaryContainerLight, tertiaryContainerDark)
 
     val onTertiaryContainer
         @Composable
         get() = colorModeAware(onTertiaryContainerLight, onTertiaryContainerDark)
 
+    infix fun onTertiaryContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(onTertiaryContainerLight, onTertiaryContainerDark)
+
     val error
         @Composable
         get() = colorModeAware(errorLight, errorDark)
+
+    infix fun errorOf(colorMode: ColorMode) = colorMode.colorModeAware(errorLight, errorDark)
 
     val onError
         @Composable
         get() = colorModeAware(onErrorLight, onErrorDark)
 
+    infix fun onErrorOf(colorMode: ColorMode) = colorMode.colorModeAware(onErrorLight, onErrorDark)
+
     val errorContainer
         @Composable
         get() = colorModeAware(errorContainerLight, errorContainerDark)
+
+    infix fun errorContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(errorContainerLight, errorContainerDark)
 
     val onErrorContainer
         @Composable
         get() = colorModeAware(onErrorContainerLight, onErrorContainerDark)
 
+    infix fun onErrorContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(onErrorContainerLight, onErrorContainerDark)
+
     val background
         @Composable
         get() = colorModeAware(backgroundLight, backgroundDark)
+
+    infix fun backgroundOf(colorMode: ColorMode) = colorMode.colorModeAware(backgroundLight, backgroundDark)
 
     val onBackground
         @Composable
         get() = colorModeAware(onBackgroundLight, onBackgroundDark)
 
+    infix fun onBackgroundOf(colorMode: ColorMode) = colorMode.colorModeAware(onBackgroundLight, onBackgroundDark)
+
     val surface
         @Composable
         get() = colorModeAware(surfaceLight, surfaceDark)
+
+    infix fun surfaceOf(colorMode: ColorMode) = colorMode.colorModeAware(surfaceLight, surfaceDark)
 
     val onSurface
         @Composable
         get() = colorModeAware(onSurfaceLight, onSurfaceDark)
 
+    infix fun onSurfaceOf(colorMode: ColorMode) = colorMode.colorModeAware(onSurfaceLight, onSurfaceDark)
+
     val surfaceVariant
         @Composable
         get() = colorModeAware(surfaceVariantLight, surfaceVariantDark)
+
+    infix fun surfaceVariantOf(colorMode: ColorMode) = colorMode.colorModeAware(surfaceVariantLight, surfaceVariantDark)
 
     val onSurfaceVariant
         @Composable
         get() = colorModeAware(onSurfaceVariantLight, onSurfaceVariantDark)
 
+    infix fun onSurfaceVariantOf(colorMode: ColorMode) = colorMode.colorModeAware(onSurfaceVariantLight, onSurfaceVariantDark)
+
     val outline
         @Composable
         get() = colorModeAware(outlineLight, outlineDark)
+
+    infix fun outlineOf(colorMode: ColorMode) = colorMode.colorModeAware(outlineLight, outlineDark)
 
     val outlineVariant
         @Composable
         get() = colorModeAware(outlineVariantLight, outlineVariantDark)
 
+    infix fun outlineVariantOf(colorMode: ColorMode) = colorMode.colorModeAware(outlineVariantLight, outlineVariantDark)
+
     val scrim
         @Composable
         get() = colorModeAware(scrimLight, scrimDark)
+
+    infix fun scrimOf(colorMode: ColorMode) = colorMode.colorModeAware(scrimLight, scrimDark)
 
     val inverseSurface
         @Composable
         get() = colorModeAware(inverseSurfaceLight, inverseSurfaceDark)
 
+    infix fun inverseSurfaceOf(colorMode: ColorMode) = colorMode.colorModeAware(inverseSurfaceLight, inverseSurfaceDark)
+
     val inverseOnSurface
         @Composable
         get() = colorModeAware(inverseOnSurfaceLight, inverseOnSurfaceDark)
+
+    infix fun inverseOnSurfaceOf(colorMode: ColorMode) = colorMode.colorModeAware(inverseOnSurfaceLight, inverseOnSurfaceDark)
 
     val inversePrimary
         @Composable
         get() = colorModeAware(inversePrimaryLight, inversePrimaryDark)
 
+    infix fun inversePrimaryOf(colorMode: ColorMode) = colorMode.colorModeAware(inversePrimaryLight, inversePrimaryDark)
+
     val surfaceDim
         @Composable
         get() = colorModeAware(surfaceDimLight, surfaceDimDark)
+
+    infix fun surfaceDimOf(colorMode: ColorMode) = colorMode.colorModeAware(surfaceDimLight, surfaceDimDark)
 
     val surfaceBright
         @Composable
         get() = colorModeAware(surfaceBrightLight, surfaceBrightDark)
 
+    infix fun surfaceBrightOf(colorMode: ColorMode) = colorMode.colorModeAware(surfaceBrightLight, surfaceBrightDark)
+
     val surfaceContainerLowest
         @Composable
         get() = colorModeAware(surfaceContainerLowestLight, surfaceContainerLowestDark)
+
+    infix fun surfaceContainerLowestOf(colorMode: ColorMode) =
+        colorMode.colorModeAware(surfaceContainerLowestLight, surfaceContainerLowestDark)
 
     val surfaceContainerLow
         @Composable
         get() = colorModeAware(surfaceContainerLowLight, surfaceContainerLowDark)
 
+    infix fun surfaceContainerLowOf(colorMode: ColorMode) = colorMode.colorModeAware(surfaceContainerLowLight, surfaceContainerLowDark)
+
     val surfaceContainer
         @Composable
         get() = colorModeAware(surfaceContainerLight, surfaceContainerDark)
+
+    infix fun surfaceContainerOf(colorMode: ColorMode) = colorMode.colorModeAware(surfaceContainerLight, surfaceContainerDark)
 
     val surfaceContainerHigh
         @Composable
         get() = colorModeAware(surfaceContainerHighLight, surfaceContainerHighDark)
 
+    infix fun surfaceContainerHighOf(colorMode: ColorMode) = colorMode.colorModeAware(surfaceContainerHighLight, surfaceContainerHighDark)
+
     val surfaceContainerHighest
         @Composable
         get() = colorModeAware(surfaceContainerHighestLight, surfaceContainerHighestDark)
+
+    infix fun surfaceContainerHighestOf(colorMode: ColorMode) =
+        colorMode.colorModeAware(surfaceContainerHighestLight, surfaceContainerHighestDark)
 }
 
 val primaryLight = parseHex("#576421")

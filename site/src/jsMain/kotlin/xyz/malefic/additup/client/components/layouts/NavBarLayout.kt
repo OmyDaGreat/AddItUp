@@ -20,8 +20,7 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.vh
 import org.jetbrains.compose.web.dom.Text
 import xyz.malefic.additup.client.styles.ActiveNavItemStyle
-import xyz.malefic.additup.client.styles.NavBarStyle
-import xyz.malefic.additup.client.styles.NavItemHoverStyle
+import xyz.malefic.additup.client.styles.HoverNavItemStyle
 import xyz.malefic.additup.client.styles.isCurrentPage
 import xyz.malefic.additup.client.util.TopLevelPages
 
@@ -32,17 +31,8 @@ fun NavBarLayout(content: @Composable () -> Unit) {
     val currentRoute = ctx.route.path
 
     Column(Modifier.fillMaxWidth().height(100.vh)) {
-        Box(
-            NavBarStyle.toModifier(),
-            contentAlignment = Alignment.Center,
-        ) {
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .maxWidth(1200.px)
-                    .padding(0.px, 20.px),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
+        Box(Modifier.fillMaxWidth().height(60.px), Alignment.Center) {
+            Row(Modifier.fillMaxWidth().maxWidth(1200.px).padding(0.px, 20.px), verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.flexGrow(1)) {
                     // Brand/Logo area (optional)
                 }
@@ -58,7 +48,7 @@ fun NavBarLayout(content: @Composable () -> Unit) {
                                 if (isActive) {
                                     ActiveNavItemStyle.toModifier()
                                 } else {
-                                    NavItemHoverStyle.toModifier()
+                                    HoverNavItemStyle.toModifier()
                                 },
                         ) {
                             Text(page.value)

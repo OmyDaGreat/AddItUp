@@ -1,9 +1,10 @@
-package xyz.malefic.additup.client.util
+package xyz.malefic.additup.client.api
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
-import arrow.core.Either
+import arrow.core.raise.Raise
+import arrow.core.raise.either
 import com.varabyte.kobweb.browser.uri.encodeURIComponent
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -29,10 +30,10 @@ sealed interface ApiState<out T> {
 @Composable
 fun <T> produceApiState(
     vararg keys: Any?,
-    block: suspend () -> Either<Issue, T>,
+    request: suspend context(Raise<Issue>) () -> T,
 ) = produceState<ApiState<T>>(ApiState.Loading, *keys) {
     value = ApiState.Loading
-    block().fold(
+    either { request() }.fold(
         { value = ApiState.Error(it) },
         { value = ApiState.Success(it) },
     )
@@ -41,7 +42,7 @@ fun <T> produceApiState(
 @Composable
 fun <T> PageContext.Request(
     vararg keys: Any?,
-    request: suspend () -> Either<Issue, T>,
+    request: suspend context(Raise<Issue>) () -> T,
     content: @Composable (T) -> Unit,
 ) {
     val state by produceApiState(*keys) { request() }
