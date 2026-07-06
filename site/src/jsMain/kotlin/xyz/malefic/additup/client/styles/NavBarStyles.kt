@@ -30,7 +30,7 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
 import org.jetbrains.compose.web.css.textDecoration
-import xyz.malefic.additup.client.util.Pages
+import xyz.malefic.additup.client.util.TopLevelPages
 import xyz.malefic.kutint.parseHex
 import xyz.malefic.kutint.rgba
 
@@ -90,8 +90,8 @@ val ActiveNavItemStyle =
             .fontWeight(600)
     }
 
-fun Pages.isCurrentPage(currentRoute: String): Boolean =
+fun TopLevelPages.isCurrentPage(currentRoute: String): Boolean =
     when (this) {
-        Pages.INDEX -> currentRoute == "" || currentRoute == "/"
+        TopLevelPages.INDEX -> currentRoute == "" || currentRoute == "/"
         else -> currentRoute == route
     }

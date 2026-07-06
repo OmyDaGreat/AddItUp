@@ -1,6 +1,6 @@
 package xyz.malefic.additup.client.util
 
-enum class Pages(
+enum class TopLevelPages(
     val value: String,
     val route: String,
 ) {

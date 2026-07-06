@@ -23,7 +23,7 @@ import xyz.malefic.additup.client.styles.ActiveNavItemStyle
 import xyz.malefic.additup.client.styles.NavBarStyle
 import xyz.malefic.additup.client.styles.NavItemHoverStyle
 import xyz.malefic.additup.client.styles.isCurrentPage
-import xyz.malefic.additup.client.util.Pages
+import xyz.malefic.additup.client.util.TopLevelPages
 
 @Layout
 @Composable
@@ -48,7 +48,7 @@ fun NavBarLayout(content: @Composable () -> Unit) {
                 }
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Pages.entries.forEach { page ->
+                    TopLevelPages.entries.forEach { page ->
                         val isActive = page.isCurrentPage(currentRoute)
                         val pageRoute = page.route
 
