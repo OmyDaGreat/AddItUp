@@ -41,6 +41,7 @@ import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
+import xyz.malefic.additup.client.styles.ThemeColor.Primary
 
 @InitSilk
 fun initStyles(ctx: InitSilkContext) {
@@ -111,7 +112,7 @@ fun initStyles(ctx: InitSilkContext) {
     ctx.theme.modifyStyle(LinkStyle) {
         base {
             Modifier
-                .color(primaryLight.color)
+                .color(Color of Primary)
                 .textDecorationLine(TextDecorationLine.None)
                 .transition {
                     property("color")
@@ -121,7 +122,7 @@ fun initStyles(ctx: InitSilkContext) {
         }
         hover {
             Modifier
-                .color(primaryLight.color.darkened(0.15f))
+                .color((Color of Primary).darkened(0.15f))
                 .textDecorationLine(TextDecorationLine.Underline)
         }
     }

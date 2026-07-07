@@ -29,6 +29,10 @@ kobweb {
 kotlin {
     configAsKobwebApplication("additup")
 
+    compilerOptions {
+        freeCompilerArgs.add("-Xcontext-parameters")
+    }
+
     jvm {
         mainRun {
             mainClass = "xyz.malefic.additup.server.MainKt"
