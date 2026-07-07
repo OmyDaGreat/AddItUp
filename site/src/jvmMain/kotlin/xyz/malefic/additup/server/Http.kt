@@ -1,5 +1,6 @@
 package xyz.malefic.additup.server
 
+import kotlinx.datetime.LocalDate
 import org.http4k.core.ContentType.Companion.APPLICATION_JSON
 import org.http4k.core.HttpHandler
 import org.http4k.core.Method.DELETE
@@ -16,7 +17,7 @@ import org.http4k.routing.RoutingHttpHandler
 import org.http4k.routing.bind
 import org.http4k.routing.routes
 import xyz.malefic.additup.common.json
-import xyz.malefic.additup.common.model.Message
+import xyz.malefic.additup.common.model.Testimonial
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
@@ -113,16 +114,16 @@ val apiRoutes: RoutingHttpHandler =
     routes(
         "/api/ping" bind GET to { Response(OK).body("pong") },
         "/api/health" bind GET to { Response(OK).body("healthy") },
-        "/api/messages" bind GET to {
-            val messages =
+        "/api/testimonials" bind GET to {
+            val testimonials =
                 listOf(
-                    Message(1, "Hello from the server!", System.currentTimeMillis()),
-                    Message(2, "This data is shared via commonMain!", System.currentTimeMillis() - 5000),
-                    Message(3, "Fetched via JSON API", System.currentTimeMillis() - 10000),
+                    Testimonial(1, "Hello from the server!", LocalDate(2026, 1, 1)),
+                    Testimonial(2, "This data is shared via commonMain!", LocalDate(2025, 9, 28)),
+                    Testimonial(3, "Fetched via JSON API", LocalDate(2026, 5, 3)),
                 )
             Response(OK)
                 .header("Content-Type", APPLICATION_JSON.value)
-                .body(json.encodeToString(messages))
+                .body(json.encodeToString(testimonials))
         },
     )
 

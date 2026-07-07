@@ -1,10 +1,11 @@
 package xyz.malefic.additup.common.model
 
+import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Message(
+data class Testimonial(
     val id: Int,
     val text: String,
-    val timestamp: Long,
+    val date: LocalDate,
 )
