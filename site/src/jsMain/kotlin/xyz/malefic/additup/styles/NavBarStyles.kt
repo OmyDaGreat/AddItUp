@@ -1,5 +1,6 @@
 package xyz.malefic.additup.styles
 
+import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.WhiteSpace
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -10,10 +11,10 @@ import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.padding
+import com.varabyte.kobweb.compose.ui.modifiers.textDecorationLine
 import com.varabyte.kobweb.compose.ui.modifiers.transition
 import com.varabyte.kobweb.compose.ui.modifiers.translateY
 import com.varabyte.kobweb.compose.ui.modifiers.whiteSpace
-import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.extendedBy
@@ -21,7 +22,6 @@ import com.varabyte.kobweb.silk.style.extendedByBase
 import com.varabyte.kobweb.silk.style.selectors.hover
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
-import org.jetbrains.compose.web.css.textDecoration
 import xyz.malefic.additup.util.TopLevelPages
 
 val BaseNavItemStyle =
@@ -30,7 +30,7 @@ val BaseNavItemStyle =
             .padding(12.px, 20.px)
             .margin(0.px, 4.px)
             .borderRadius(6.px)
-            .styleModifier { textDecoration("none") }
+            .textDecorationLine(TextDecorationLine.None)
             .color(of(AppPalette.onBackground))
             .fontSize(14.px)
             .fontWeight(500)
@@ -38,7 +38,7 @@ val BaseNavItemStyle =
             .whiteSpace(WhiteSpace.NoWrap)
     }
 
-val HoverNavItemStyle =
+val HoverableNavItemStyle =
     BaseNavItemStyle.extendedBy {
         hover {
             Modifier

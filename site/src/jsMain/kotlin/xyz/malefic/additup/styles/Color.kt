@@ -1,7 +1,6 @@
 package xyz.malefic.additup.styles
 
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Color.Companion.rgba
 import com.varabyte.kobweb.compose.ui.modifiers.setVariable
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
@@ -78,7 +77,7 @@ open class AddItUpPalette : BasePalette() {
 
 val AppPalette = AddItUpPalette()
 
-fun CssStyleScopeBase.of(adaptive: AdaptiveColor): Color = adaptive.run { this@of.value() }.color
+fun CssStyleScopeBase.of(adaptive: AdaptiveColor) = adaptive.run { this@of.value() }
 
 @InitSilk
 fun initColor(ctx: InitSilkContext) {
