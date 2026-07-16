@@ -13,7 +13,7 @@ import org.jetbrains.compose.web.css.CSSUnit
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 
-val DISPLAY_FONT = listOf("Comfortaa", "sans-serif")
+val DISPLAY_FONT = listOf("Gaegu", "sans-serif")
 val HEADER_FONT = listOf("Quicksand", "sans-serif")
 val BODY_FONT = listOf("Outfit", "sans-serif")
 

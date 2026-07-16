@@ -1,6 +1,7 @@
 @file:OptIn(ExperimentalKotlinGradlePluginApi::class)
 
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.link
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
@@ -16,6 +17,21 @@ version = "1.0.0"
 kobweb {
     app {
         index {
+            head.add {
+                link {
+                    rel = "preconnect"
+                    href = "https://fonts.googleapis.com"
+                }
+                link {
+                    rel = "preconnect"
+                    href = "https://fonts.gstatic.com"
+                    attributes["crossorigin"] = "anonymous"
+                }
+                link {
+                    rel = "stylesheet"
+                    href = "https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap"
+                }
+            }
             description.set("Powered by Kobweb")
         }
     }
