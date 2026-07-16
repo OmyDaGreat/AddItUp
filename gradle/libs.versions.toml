@@ -3,7 +3,6 @@ jetbrains-compose = "1.11.1"
 kobweb = "0.25.0"
 kotlin = "2.4.10"
 kutint = "2.0.0"
-arrow = "2.2.3"
 
 [libraries]
 compose-html-core = { group = "org.jetbrains.compose.html", name = "html-core", version.ref = "jetbrains-compose" }
@@ -13,8 +12,6 @@ kobweb-silk = { group = "com.varabyte.kobweb", name = "kobweb-silk", version.ref
 silk-icons-fa = { group = "com.varabyte.kobwebx", name ="silk-icons-fa", version.ref = "kobweb" }
 silk-icons-ms = { group = "com.varabyte.kobwebx", name = "silk-icons-ms", version.ref = "kobweb" }
 kutint = { group = "xyz.malefic", name = "kutint", version.ref = "kutint" }
-
-arrow-core = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow" }
 
 [plugins]
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
