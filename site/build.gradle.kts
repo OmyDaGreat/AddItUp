@@ -29,7 +29,7 @@ kobweb {
                 }
                 link {
                     rel = "stylesheet"
-                    href = "https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap"
+                    href = "https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Schoolbell&family=Varela+Round&display=swap"
                 }
             }
             description.set("Powered by Kobweb")
