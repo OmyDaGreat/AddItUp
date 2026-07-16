@@ -1,5 +1,6 @@
 site:
   title: "Add It Up"
+  basePath: "AddItUp"
 
 server:
   files:
