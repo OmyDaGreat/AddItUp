@@ -1,4 +1,4 @@
-package xyz.malefic.additup.client.styles
+package xyz.malefic.additup.styles
 
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fontFamily

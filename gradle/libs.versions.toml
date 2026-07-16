@@ -3,32 +3,18 @@ jetbrains-compose = "1.11.1"
 kobweb = "0.25.0"
 kotlin = "2.4.10"
 kutint = "2.0.0"
-http4k = "6.55.0.0"
-kotlinx-serialization = "1.11.0"
 arrow = "2.2.3"
-datetime = "0.8.0"
 
 [libraries]
 compose-html-core = { group = "org.jetbrains.compose.html", name = "html-core", version.ref = "jetbrains-compose" }
 compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "jetbrains-compose" }
 kobweb-core = { group = "com.varabyte.kobweb", name = "kobweb-core", version.ref = "kobweb" }
 kobweb-silk = { group = "com.varabyte.kobweb", name = "kobweb-silk", version.ref = "kobweb" }
-kobweb-api = { group = "com.varabyte.kobweb", name = "kobweb-api", version.ref = "kobweb" }
-kobwebx-serialization-kotlinx = { group = "com.varabyte.kobwebx", name = "kobwebx-serialization-kotlinx", version.ref = "kobweb" }
-silk-foundation = { group = "com.varabyte.kobweb", name = "silk-foundation", version.ref = "kobweb" }
 silk-icons-fa = { group = "com.varabyte.kobwebx", name ="silk-icons-fa", version.ref = "kobweb" }
 silk-icons-ms = { group = "com.varabyte.kobwebx", name = "silk-icons-ms", version.ref = "kobweb" }
 kutint = { group = "xyz.malefic", name = "kutint", version.ref = "kutint" }
 
-http4k-core = { group = "org.http4k", name = "http4k-core", version.ref = "http4k" }
-http4k-server-undertow = { group = "org.http4k", name = "http4k-server-undertow", version.ref = "http4k" }
-http4k-format-kotlinx = { group = "org.http4k", name = "http4k-format-kotlinx-serialization", version.ref = "http4k" }
-
-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
-
 arrow-core = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow" }
-
-kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "datetime" }
 
 [plugins]
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
@@ -40,4 +26,3 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 kobweb = ["kobweb-core", "kobweb-silk"]
 compose = ["compose-html-core", "compose-runtime"]
 silk-icons = ["silk-icons-fa", "silk-icons-ms"]
-http4k = ["http4k-core", "http4k-server-undertow"]

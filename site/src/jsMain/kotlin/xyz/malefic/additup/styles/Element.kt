@@ -1,4 +1,4 @@
-package xyz.malefic.additup.client.styles
+package xyz.malefic.additup.styles
 
 import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.css.Transition
@@ -41,7 +41,6 @@ import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
-import xyz.malefic.additup.client.styles.ThemeColor.Primary
 
 @InitSilk
 fun initStyles(ctx: InitSilkContext) {
@@ -112,7 +111,7 @@ fun initStyles(ctx: InitSilkContext) {
     ctx.theme.modifyStyle(LinkStyle) {
         base {
             Modifier
-                .color(Color of Primary)
+                .color(of(AppPalette.primary))
                 .textDecorationLine(TextDecorationLine.None)
                 .transition {
                     property("color")
@@ -122,7 +121,7 @@ fun initStyles(ctx: InitSilkContext) {
         }
         hover {
             Modifier
-                .color((Color of Primary).darkened(0.15f))
+                .color(of(AppPalette.primary).darkened(0.15f))
                 .textDecorationLine(TextDecorationLine.Underline)
         }
     }

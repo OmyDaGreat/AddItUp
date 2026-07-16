@@ -1,4 +1,4 @@
-package xyz.malefic.additup.client.styles
+package xyz.malefic.additup.styles
 
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.css.WhiteSpace
@@ -22,11 +22,7 @@ import com.varabyte.kobweb.silk.style.selectors.hover
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
 import org.jetbrains.compose.web.css.textDecoration
-import xyz.malefic.additup.client.styles.ThemeColor.OnBackground
-import xyz.malefic.additup.client.styles.ThemeColor.OnSecondaryContainer
-import xyz.malefic.additup.client.styles.ThemeColor.Primary
-import xyz.malefic.additup.client.styles.ThemeColor.SecondaryContainer
-import xyz.malefic.additup.client.util.TopLevelPages
+import xyz.malefic.additup.util.TopLevelPages
 
 val BaseNavItemStyle =
     CssStyle.base {
@@ -35,7 +31,7 @@ val BaseNavItemStyle =
             .margin(0.px, 4.px)
             .borderRadius(6.px)
             .styleModifier { textDecoration("none") }
-            .color(Color of OnBackground)
+            .color(of(AppPalette.onBackground))
             .fontSize(14.px)
             .fontWeight(500)
             .transition(Transition.all(0.2.s))
@@ -46,8 +42,8 @@ val HoverNavItemStyle =
     BaseNavItemStyle.extendedBy {
         hover {
             Modifier
-                .background(Color of SecondaryContainer)
-                .color(Color of OnSecondaryContainer)
+                .background(of(AppPalette.secondaryContainer))
+                .color(of(AppPalette.onSecondaryContainer))
                 .translateY((-1).px)
         }
     }
@@ -55,8 +51,8 @@ val HoverNavItemStyle =
 val ActiveNavItemStyle =
     BaseNavItemStyle.extendedByBase {
         Modifier
-            .background(Color of SecondaryContainer)
-            .color(Color of Primary)
+            .background(of(AppPalette.secondaryContainer))
+            .color(of(AppPalette.primary))
             .fontWeight(600)
     }
 

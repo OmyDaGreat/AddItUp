@@ -1,4 +1,4 @@
-package xyz.malefic.additup.client.components
+package xyz.malefic.additup.components
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.AnimationIterationCount
@@ -21,9 +21,7 @@ import org.jetbrains.compose.web.css.deg
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
-import xyz.malefic.additup.client.styles.Color
-import xyz.malefic.additup.client.styles.ThemeColor.Primary
-import xyz.malefic.additup.client.styles.of
+import xyz.malefic.additup.styles.AppPalette
 
 val SpinKeyframes = Keyframes { to { Modifier.transform { rotate(360.deg) } } }
 
@@ -34,7 +32,7 @@ fun Spinner() {
             Modifier
                 .size(48.px)
                 .borderRadius(50.percent)
-                .border(4.px, LineStyle.Solid, Color of Primary)
+                .border(4.px, LineStyle.Solid, AppPalette.primary.value())
                 .borderTop { color(Colors.Transparent) }
                 .animation(
                     SpinKeyframes.toAnimation(

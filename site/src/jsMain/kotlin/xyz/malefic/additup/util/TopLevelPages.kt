@@ -1,4 +1,4 @@
-package xyz.malefic.additup.client.util
+package xyz.malefic.additup.util
 
 enum class TopLevelPages(
     val value: String,
