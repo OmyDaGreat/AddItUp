@@ -6,5 +6,4 @@ enum class TopLevelPages(
 ) {
     INDEX("Index", "/"),
     ABOUT("About", "/about"),
-    MESSAGES("Messages", "/messages"),
 }
