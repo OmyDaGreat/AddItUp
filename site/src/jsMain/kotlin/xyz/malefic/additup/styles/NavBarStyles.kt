@@ -56,8 +56,4 @@ val ActiveNavItemStyle =
             .fontWeight(600)
     }
 
-fun TopLevelPages.isCurrentPage(currentRoute: String): Boolean =
-    when (this) {
-        TopLevelPages.INDEX -> currentRoute == "" || currentRoute == "/"
-        else -> currentRoute == route
-    }
+fun TopLevelPages.isCurrentPage(activeSectionId: String): Boolean = activeSectionId == sectionId

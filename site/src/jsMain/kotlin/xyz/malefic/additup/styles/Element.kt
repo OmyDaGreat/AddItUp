@@ -121,7 +121,7 @@ fun initStyles(ctx: InitSilkContext) {
         }
         hover {
             Modifier
-                .color(of(AppPalette.primary).darkened(0.15f))
+                .color(of(AppPalette.primary).darken(0.15f))
                 .textDecorationLine(TextDecorationLine.Underline)
         }
     }

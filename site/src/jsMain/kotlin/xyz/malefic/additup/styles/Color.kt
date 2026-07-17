@@ -37,6 +37,7 @@ import xyz.malefic.kutint.BasePalette
 import xyz.malefic.kutint.color
 import xyz.malefic.kutint.darkTransform
 import xyz.malefic.kutint.parseHex
+import xyz.malefic.kutint.with
 
 val floralWhite = parseHex("#F8F5EA")
 val paleSky = parseHex("#C6DAEC")
@@ -45,33 +46,33 @@ val prussianBlue = parseHex("#0D2645")
 val carbonBlack = parseHex("#1F1F1F")
 
 open class AddItUpPalette : BasePalette() {
-    var primary by color(prussianBlue darkTransform { it.lighten(0.4f) })
+    var primary by color(prussianBlue with prussianBlue)
     var onPrimary by color { primary map { it.contrast() } }
-    var primaryContainer by color(prussianBlue.lighten(0.6f) darkTransform { it.darken(0.2f) })
+    var primaryContainer by color(prussianBlue.lighten(0.6f) darkTransform { it })
     var onPrimaryContainer by color { primaryContainer map { it.contrast() } }
 
-    var secondary by color(paleSky darkTransform { it.lighten(0.2f) })
+    var secondary by color(paleSky darkTransform { it })
     var onSecondary by color { secondary map { it.contrast() } }
-    var secondaryContainer by color(paleSky.lighten(0.2f) darkTransform { it.darken(0.2f) })
+    var secondaryContainer by color(paleSky.lighten(0.2f) darkTransform { it })
     var onSecondaryContainer by color { secondaryContainer map { it.contrast() } }
 
-    var tertiary by color(babyBlueIce darkTransform { it.lighten(0.2f) })
+    var tertiary by color(babyBlueIce darkTransform { it })
     var onTertiary by color { tertiary map { it.contrast() } }
-    var tertiaryContainer by color(babyBlueIce.lighten(0.2f) darkTransform { it.darken(0.2f) })
+    var tertiaryContainer by color(babyBlueIce.lighten(0.2f) darkTransform { it })
     var onTertiaryContainer by color { tertiaryContainer map { it.contrast() } }
 
-    var background by color(floralWhite, carbonBlack)
+    var background by color(floralWhite darkTransform { it })
     var onBackground by color { background map { it.contrast() } }
-    var surface by color(floralWhite, carbonBlack)
+    var surface by color(floralWhite darkTransform { it })
     var onSurface by color { surface map { it.contrast() } }
 
-    var surfaceVariant by color(floralWhite.darken(0.05f), carbonBlack.lighten(0.1f))
+    var surfaceVariant by color(floralWhite.darken(0.05f) darkTransform { it })
     var onSurfaceVariant by color { surfaceVariant map { it.contrast() } }
 
-    var outline by color(paleSky.darken(0.2f), paleSky.lighten(0.2f))
-    var outlineVariant by color(paleSky.lighten(0.1f), paleSky.darken(0.1f))
+    var outline by color(paleSky.darken(0.2f) darkTransform { it })
+    var outlineVariant by color(paleSky.lighten(0.1f) darkTransform { it })
 
-    var error by color(parseHex("#BA1A1A"), parseHex("#FFB4AB"))
+    var error by color(parseHex("#BA1A1A") darkTransform { it })
     var onError by color { error map { it.contrast() } }
 }
 
